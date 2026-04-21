@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import AboutMe from '../pages/tabs/Aboutme'; 
+import Education  from '../pages/tabs/Education';
 
 export default function Status() {
   const [activeSection, setActiveSection] = useState('About Me');
@@ -11,7 +12,7 @@ export default function Status() {
       case 'About Me':
         return <AboutMe />;
       case 'Education':
-        return <div className="flex h-full items-center justify-center text-2xl opacity-50">Loading Education...</div>;
+        return <Education />;
       case 'Skills':
         return <div className="flex h-full items-center justify-center text-2xl opacity-50">Loading Skills...</div>;
       case 'Other':
@@ -24,7 +25,6 @@ export default function Status() {
   return (
     <div className="flex h-full flex-col">
       
-      {/* Header Stats */}
       <div className="mb-4 lg:mb-8 flex flex-wrap justify-center lg:justify-end gap-4 lg:gap-8 border-b border-pip-green/30 pb-2 text-sm md:text-xl drop-shadow-text-glow">
         <span>Wg 34/125</span>
         <span>HP 89/110</span>
@@ -32,13 +32,11 @@ export default function Status() {
         <span>Caps 1721</span>
       </div>
 
-      {/* Master-Detail Layout */}
-      <div className="flex flex-col lg:flex-row flex-1 gap-6 lg:gap-10">
+      <div className="flex flex-col lg:flex-row flex-1 gap-6 lg:gap-10 lg:min-h-0">
         
-        {/* LEFT COLUMN: GIF + Navigation */}
-        <div className="flex w-full lg:w-1/3 items-center lg:items-start gap-6 border-b border-pip-green/30 pb-6 lg:border-none lg:pb-0">
+        <div className="flex w-full lg:w-1/3 flex-col items-center lg:items-start gap-6 border-b border-pip-green/30 pb-6 lg:border-none lg:pb-0">
           
-          {/* The Section List */}
+
           <div className="flex w-full flex-row lg:flex-col overflow-x-auto no-scrollbar lg:overflow-visible gap-4 text-lg lg:text-2xl whitespace-nowrap">
             {sections.map(section => (
               <div 
@@ -53,8 +51,7 @@ export default function Status() {
           </div>
         </div>
 
-        {/* RIGHT COLUMN: Dynamically Rendered Components */}
-        <div className="flex w-full lg:w-2/3 flex-col pb-8 lg:pb-0">
+        <div className="flex w-full lg:w-2/3 flex-col pb-8 lg:pb-0 h-full lg:min-h-0">
           {renderContent()}
         </div>
 

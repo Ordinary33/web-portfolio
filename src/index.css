@@ -27,9 +27,6 @@ body {
   --crt-blue: rgba(40, 129, 206, 0.15);
 }
 
-/* The CRT Overlay 
-  We use pointer-events: none so it doesn't block you from clicking your tabs!
-*/
 .crt-overlay {
   position: relative;
 }
@@ -45,10 +42,9 @@ body {
   width: 100%;
   left: 0;
   top: 0;
-  z-index: 50; /* Forces the scanlines to sit on top of all your content */
+  z-index: 50; 
 }
 
-/* Horizontal Sub-pixels */
 .crt-overlay::before {
   background: repeating-linear-gradient(
     var(--crt-red) 0px,
@@ -57,7 +53,6 @@ body {
   );
 }
 
-/* Vertical Sub-pixels */
 .crt-overlay::after {
   background: repeating-linear-gradient(
     90deg,
@@ -76,4 +71,27 @@ body {
   
   background-size: 100% 100%, 40px 40px, 40px 40px;
   background-position: center center;
+}
+
+.pip-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #00ff00 transparent;
+}
+
+.pip-scrollbar::-webkit-scrollbar {
+  width: 10px; 
+}
+
+.pip-scrollbar::-webkit-scrollbar-track {
+  background: transparent; 
+  border-left: 1px solid rgba(37, 150, 190, 0.2); 
+}
+
+.pip-scrollbar::-webkit-scrollbar-thumb {
+  background: #00ff00; 
+  border-radius: 0px; 
+}
+
+.pip-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(37, 150, 190, 0.8); 
 }

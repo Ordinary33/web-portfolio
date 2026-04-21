@@ -3,7 +3,7 @@ import Status from './pages/Status';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('Status');
-  const tabs = ['Status', 'Inv', 'Data', 'Radio'];
+  const tabs = ['Status', 'Logs', 'Quests', 'Radio'];
 
   return (
     <div className="terminal-bg flex min-h-screen w-full items-center justify-center font-terminal text-pip-green p-2 md:p-6">
