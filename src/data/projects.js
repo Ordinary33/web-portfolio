@@ -1,6 +1,6 @@
-export const projectsData = [
+export default [
     {
-      name: "Libris - Peer-to-Peer Book Marketplace",
+      name: "Libris",
       tools: ["Nuxt.js", "Flask", "Supabase", "Websockets"],
       description: [
         "Co-developed a hyperlocal peer-to-peer book marketplace, architecting a scalable backend using Flask and Supabase for secure relational data management.",
@@ -10,7 +10,7 @@ export const projectsData = [
       image: "/gifs/projects/libris.gif"
     },
     {
-      name: "Dentica (Dental Clinic Management System)",
+      name: "Dentica",
       tools: ["Python", "PyQt6", "MySQL"],
       description: [
         "Engineered a centralized healthcare management system using Python and PyQt6 to eliminate data inconsistencies in paper-based clinic workflows.",
@@ -20,7 +20,7 @@ export const projectsData = [
       image: "/gifs/projects/dentica.gif"
     },
     {
-      name: "Veridia (Student Information System)",
+      name: "Veridia",
       tools: ["Vue.js", "Flask", "Supabase"],
       description: [
         "Architected a normalized relational database in Supabase, enforcing strict foreign key constraints to maintain institutional data integrity for academic administration.",
@@ -30,7 +30,7 @@ export const projectsData = [
       image: "/gifs/projects/veridia.gif"
     },
     {
-      name: "Personal Portfolio RAG Chatbot",
+      name: "RAG Chatbot",
       tools: ["Python", "LangChain", "FastAPI", "Ollama", "Streamlit"],
       description: [
         "Architected a Retrieval-Augmented Generation (RAG) pipeline using LangChain and a local LLM via Ollama to create an interactive GenAI conversational agent grounded in personal resume and project data.",
