@@ -1,5 +1,49 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import projectsData from "../data/projects"
+
+const TabItem = ({ name, isActive, onClick }) => {
+    const [isHovered, setIsHovered] = useState(false);
+    const [isOverflowing, setIsOverflowing] = useState(false);
+    
+    const textRef = useRef(null);
+
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+        
+        if (textRef.current) {
+            setIsOverflowing(textRef.current.scrollWidth > textRef.current.clientWidth);
+        }
+    };
+
+    return (
+        <div
+            onClick={onClick}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={() => setIsHovered(false)}
+            className={`flex w-full overflow-hidden cursor-pointer items-center justify-center lg:justify-start gap-2 hover:drop-shadow-text-glow shrink-0 ${
+                isActive ? 'opacity-100' : 'opacity-60 hover:opacity-100'
+            }`}
+        >
+            <div className={`hidden shrink-0 lg:block h-3 w-3 ${isActive ? 'bg-pip-green' : 'bg-transparent'}`}></div>
+            
+            <div className="flex-1 overflow-hidden">
+                {isHovered && isOverflowing ? (
+                    <marquee scrollamount="5" className="whitespace-nowrap">
+                        {name}
+                    </marquee>
+                ) : (
+                    <span 
+                        ref={textRef} 
+                        className="block truncate whitespace-nowrap"
+                    >
+                        {name}
+                    </span>
+                )}
+            </div>
+        </div>
+    );
+};
+
 export default function Logs() {
 
     const [activeSection, setActiveSection] = useState('Libris')
@@ -24,15 +68,13 @@ export default function Logs() {
 
                     <div className="flex w-full flex-row lg:flex-col overflow-x-auto no-scrollbar lg:overflow-visible gap-4 text-lg lg:text-2xl whitespace-nowrap">
                         {projectsData.map(project => (
-                            <div
-                                key={project.name}
-                                onClick={() => setActiveSection(project.name)}
-                                className={`flex cursor-pointer items-center justify-center lg:justify-start gap-2 hover:drop-shadow-text-glow shrink-0 ${activeSection === project.name ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}
-                            >
-                                <div  className={`hidden lg:block h-3 w-3 ${activeSection === project.name ? 'bg-pip-green' : 'bg-transparent'}`}></div>
-                                    {project.name}
-                                </div>
-                        ))}
+                                <TabItem 
+                                    key={project.name}
+                                    name={project.name}
+                                    isActive={activeSection === project.name}
+                                    onClick={() => setActiveSection(project.name)}
+                                />
+                            ))}
                     </div>
                 </div>
 
