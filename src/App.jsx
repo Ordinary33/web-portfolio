@@ -1,6 +1,8 @@
-import { useState } from 'react';
-import Status from './pages/Status';
+import { useState } from 'react'
+import Status from './pages/Status'
 import Logs from './pages/Logs'
+import Quests from './pages/Quests'
+import Radio from './pages/Radio'
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('Status');
