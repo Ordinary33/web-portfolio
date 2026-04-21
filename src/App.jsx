@@ -1,9 +1,26 @@
 import { useState } from 'react';
 import Status from './pages/Status';
+import Logs from './pages/Logs'
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('Status');
   const tabs = ['Status', 'Logs', 'Quests', 'Radio'];
+
+  const renderContent = () => {
+    switch(activeTab) {
+      case 'Status':
+        return <Status />
+      case 'Logs':
+        return <Logs />
+      case 'Quests':
+        return <Quests />
+      case 'Radio':
+        return <Radio />
+      default:
+        return null
+    }
+  }
+    
 
   return (
     <div className="terminal-bg flex min-h-screen w-full items-center justify-center font-terminal text-pip-green p-2 md:p-6">
@@ -23,11 +40,7 @@ export default function App() {
            </div>
 
            <div className="flex-1 w-full overflow-y-auto no-scrollbar lg:p-10 lg:pt-12">
-             {activeTab === 'Status' ?  <Status /> :  (
-               <div className="flex h-full w-full items-center justify-center text-2xl lg:text-4xl text-center drop-shadow-text-glow animate-pulse">
-                 AWAITING_SYSTEM_DATA...
-               </div>
-             )}
+             {renderContent()}
            </div>
            
            <div className="mt-auto lg:mt-0 pt-4 lg:pt-0 border-t-2 border-pip-green lg:border-none lg:absolute lg:bottom-0 lg:left-0 flex w-full lg:translate-y-1/2 items-center justify-center gap-2 sm:gap-4 lg:gap-12 flex-wrap lg:flex-nowrap bg-[#0A1C0A] lg:bg-transparent">
