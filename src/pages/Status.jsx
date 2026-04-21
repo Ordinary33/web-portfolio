@@ -1,22 +1,21 @@
 import { useState } from 'react';
 import AboutMe from '../pages/tabs/Aboutme'; 
 import Education  from '../pages/tabs/Education';
+import Skills from '../pages/tabs/Skills';
 
 export default function Status() {
-  const [activeSection, setActiveSection] = useState('About Me');
-  const sections = ['About Me', 'Education', 'Skills'];
+  const [activeSection, setActiveSection] = useState('Stats');
+  const sections = ['Stats', 'Education', 'Skills'];
 
 
   const renderContent = () => {
     switch (activeSection) {
-      case 'About Me':
+      case 'Stats':
         return <AboutMe />;
       case 'Education':
         return <Education />;
       case 'Skills':
-        return <div className="flex h-full items-center justify-center text-2xl opacity-50">Loading Skills...</div>;
-      case 'Other':
-        return <div className="flex h-full items-center justify-center text-2xl opacity-50">Loading Other...</div>;
+        return <Skills />;
       default:
         return null;
     }

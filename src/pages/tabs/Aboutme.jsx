@@ -39,7 +39,7 @@ export default function AboutMe() {
           </div>
   
           <div className="flex flex-col justify-between lg:flex-row lg:items-center">
-            <span className="text-base uppercase tracking-wider opacity-80 lg:text-xl">Specialization</span>
+            <span className="text-base uppercase tracking-wider opacity-80 lg:text-xl">Interests</span>
             <span className="mt-1 text-base font-bold tracking-widest lg:mt-0 lg:text-right lg:text-xl">ML, Data Science, SWE</span>
           </div>
   

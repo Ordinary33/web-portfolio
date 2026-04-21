@@ -35,7 +35,7 @@ export default function Education() {
         </div>
   
         <span className="mb-4 shrink-0 text-base uppercase tracking-wider opacity-80 lg:text-xl">
-          Relevant Coursework Data_Log
+          Relevant Courseworks
         </span>
         
         <div className="flex-1 min-h-0 overflow-y-auto pip-scrollbar pr-4">
