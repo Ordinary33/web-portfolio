@@ -6,7 +6,7 @@ export default function App() {
   const tabs = ['Status', 'Inv', 'Data', 'Radio'];
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-center bg-pip-dark font-terminal text-pip-green p-2 md:p-6">
+    <div className="flex min-h-screen w-full items-center justify-center bg-[#051105] font-terminal text-pip-green p-2 md:p-6">
       
       <div className="relative flex w-full max-w-[1100px] h-[95vh] lg:h-[750px] items-center justify-center bg-[#0A1C0A] overflow-hidden">
 

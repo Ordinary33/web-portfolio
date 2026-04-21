@@ -6,14 +6,11 @@ body {
   background-color: #051105; 
 }
 
-.crt-scanlines {
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.03) 0px,
-    rgba(0, 0, 0, 0.03) 1px,
-    transparent 1px,
-    transparent 2px
-  );
+.crt {
+  background-color: rgb(25, 25, 30);
+  text-shadow: 0 0 0.2em currentColor, 1px 1px rgba(255, 0, 255, 0.5),
+    -1px -1px rgba(0, 255, 255, 0.4);
+  position: relative;
 }
 
 .no-scrollbar::-webkit-scrollbar {
