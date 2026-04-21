@@ -8,7 +8,7 @@ export default function AboutMe() {
           {/* Name */}
           <div className="flex flex-col">
             <span className="text-sm uppercase tracking-wider opacity-80 lg:text-base">Name</span>
-            <span className="text-lg font-bold tracking-widest lg:text-xl">Husnie</span>
+            <span className="text-lg font-bold tracking-widest lg:text-xl">Husnie Baddie</span>
           </div>
   
           {/* Age */}
@@ -30,7 +30,7 @@ export default function AboutMe() {
           
           <div className="flex flex-col justify-between lg:flex-row lg:items-center">
             <span className="text-base uppercase tracking-wider opacity-80 lg:text-xl">Location</span>
-            <span className="mt-1 text-base font-bold tracking-widest lg:mt-0 lg:text-right lg:text-xl">// Null</span>
+            <span className="mt-1 text-base font-bold tracking-widest lg:mt-0 lg:text-right lg:text-xl">Lanao del Norte, Philippines</span>
           </div>
   
           <div className="flex flex-col justify-between lg:flex-row lg:items-center">

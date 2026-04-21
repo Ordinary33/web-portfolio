@@ -6,9 +6,9 @@ export default function App() {
   const tabs = ['Status', 'Inv', 'Data', 'Radio'];
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-center bg-[#051105] font-terminal text-pip-green p-2 md:p-6">
+    <div className="terminal-bg flex min-h-screen w-full items-center justify-center font-terminal text-pip-green p-2 md:p-6">
       
-      <div className="relative flex w-full max-w-[1100px] h-[95vh] lg:h-[750px] items-center justify-center bg-[#0A1C0A] overflow-hidden">
+      <div className="crt-overlay relative flex w-full max-w-[1100px] h-[95vh] lg:h-[750px] items-center justify-center bg-[#0A1C0A] overflow-hidden">
 
         <div className="relative flex flex-col h-full w-full lg:h-[80%] lg:w-[90%] border-2 lg:border-b-2 lg:border-l-2 lg:border-r-2 lg:border-t-0 border-pip-green shadow-crt p-4 lg:p-0">
 

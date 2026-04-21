@@ -5,11 +5,6 @@ export default function Status() {
   const [activeSection, setActiveSection] = useState('About Me');
   const sections = ['About Me', 'Education', 'Skills'];
 
-  const sectionGifs = {
-    'About Me': '../assets/vaultboy.gif',
-    'Education': '../assets/nerd.gif',
-    'Skills': '../assets/handyman.gif',
-  };
 
   const renderContent = () => {
     switch (activeSection) {
@@ -41,20 +36,8 @@ export default function Status() {
       <div className="flex flex-col lg:flex-row flex-1 gap-6 lg:gap-10">
         
         {/* LEFT COLUMN: GIF + Navigation */}
-        <div className="flex w-full lg:w-1/3 flex-col items-center lg:items-start gap-6 border-b border-pip-green/30 pb-6 lg:border-none lg:pb-0">
+        <div className="flex w-full lg:w-1/3 items-center lg:items-start gap-6 border-b border-pip-green/30 pb-6 lg:border-none lg:pb-0">
           
-          <div className="flex h-[180px] w-[180px] lg:h-[220px] lg:w-[220px] shrink-0 items-center justify-center drop-shadow-text-glow">
-            <div 
-              style={{
-                backgroundImage: `url(${sectionGifs[activeSection]})`,
-                backgroundSize: 'contain',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-              }}
-              className="h-full w-full opacity-90"
-            />
-          </div>
-
           {/* The Section List */}
           <div className="flex w-full flex-row lg:flex-col overflow-x-auto no-scrollbar lg:overflow-visible gap-4 text-lg lg:text-2xl whitespace-nowrap">
             {sections.map(section => (

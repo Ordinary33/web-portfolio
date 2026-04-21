@@ -13,7 +13,7 @@ export default {
         'pip-dark': '#000000',
       },
       fontFamily: {
-        terminal: ['"VT323"', 'monospace'],
+        terminal: ['"Monofonto"', 'monospace'],
       },
       boxShadow: {
         'crt': '0 0 10px rgba(20, 217, 17, 0.7), inset 0 0 15px rgba(20, 217, 17, 0.2)',

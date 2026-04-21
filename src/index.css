@@ -2,15 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #051105; 
+@font-face {
+  font-family: 'Monofonto';
+  src: url('./assets/fonts/monofonto.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.crt {
-  background-color: rgb(25, 25, 30);
-  text-shadow: 0 0 0.2em currentColor, 1px 1px rgba(255, 0, 255, 0.5),
-    -1px -1px rgba(0, 255, 255, 0.4);
-  position: relative;
+body {
+  background-color: #051105; 
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -19,4 +19,61 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+:root {
+  --crt-red: rgba(218, 49, 49, 0.15);
+  --crt-green: rgba(112, 159, 115, 0.15);
+  --crt-blue: rgba(40, 129, 206, 0.15);
+}
+
+/* The CRT Overlay 
+  We use pointer-events: none so it doesn't block you from clicking your tabs!
+*/
+.crt-overlay {
+  position: relative;
+}
+
+.crt-overlay::before,
+.crt-overlay::after {
+  content: "";
+  transform: translateZ(0);
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 50; /* Forces the scanlines to sit on top of all your content */
+}
+
+/* Horizontal Sub-pixels */
+.crt-overlay::before {
+  background: repeating-linear-gradient(
+    var(--crt-red) 0px,
+    var(--crt-green) 2px,
+    var(--crt-blue) 4px
+  );
+}
+
+/* Vertical Sub-pixels */
+.crt-overlay::after {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--crt-red) 1px,
+    var(--crt-green) 2px,
+    var(--crt-blue) 3px
+  );
+}
+
+.terminal-bg {
+  background-color: #051105; 
+  background-image:
+    radial-gradient(circle at center, transparent 20%, #000 100%),
+    linear-gradient(rgba(37, 150, 190, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 150, 190, 0.08) 1px, transparent 1px);
+  
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+  background-position: center center;
 }
