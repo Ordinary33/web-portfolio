@@ -66,7 +66,7 @@ body {
   background-color: #051105; 
   background-image:
     radial-gradient(circle at center, transparent 20%, #000 100%),
-    linear-gradient(rgba(37, 150, 190, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(0, 238, 0, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(37, 150, 190, 0.08) 1px, transparent 1px);
   
   background-size: 100% 100%, 40px 40px, 40px 40px;
@@ -75,7 +75,7 @@ body {
 
 .pip-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #00ff00 transparent;
+  scrollbar-color: #008e00 transparent;
 }
 
 .pip-scrollbar::-webkit-scrollbar {
@@ -88,10 +88,10 @@ body {
 }
 
 .pip-scrollbar::-webkit-scrollbar-thumb {
-  background: #00ff00; 
+  background: #008e00; 
   border-radius: 0px; 
 }
 
 .pip-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(37, 150, 190, 0.8); 
+  background: #008e00; 
 }

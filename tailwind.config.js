@@ -8,18 +8,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        'pip-green': '#00ff00',
-        'pip-green-dim': 'rgba(0, 255, 0, 0.2)',
-        'pip-dark': '#000000',
+        'pip-green': '#00ee00', 
+        'pip-mid': '#008e00',
+        'pip-dark': '#002f00',
+        'pip-black': '#000000',
       },
       fontFamily: {
         terminal: ['"Monofonto"', 'monospace'],
       },
       boxShadow: {
-        'crt': '0 0 10px rgba(20, 217, 17, 0.7), inset 0 0 15px rgba(20, 217, 17, 0.2)',
+        'crt': '0 0 4px rgba(0, 238, 0, 0.4), inset 0 0 5px rgba(0, 238, 0, 0.1)',
       },
       dropShadow: {
-        'text-glow': '0 0 1px rgba(20, 217, 17, 1)',
+        'text-glow': '0 0 2px rgba(0, 238, 0, 0.6)',
       }
     },
   },
