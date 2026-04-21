@@ -7,7 +7,8 @@ export default [
         "Engineered a real-time digital wallet and transaction system utilizing WebSockets to simulate instant top-ups and seamless status updates.",
         "Built a responsive frontend interface with Nuxt.js to ensure a seamless cross-device user experience for community trading."
       ],
-      image: "/gifs/projects/libris.gif"
+      image: "/gifs/projects/libris.gif",
+      github: "https://github.com/xbryan25/libris-github"
     },
     {
       name: "Dentica",
@@ -17,7 +18,8 @@ export default [
         "Designed a robust MySQL database architecture to securely manage comprehensive patient records, long-term treatment histories, and financial operations.",
         "Developed real-time reporting analytics and automated scheduling modules to drive data-driven insights and operational efficiency."
       ],
-      image: "/gifs/projects/dentica.gif"
+      image: "/gifs/projects/dentica.gif",
+      github: "https://github.com/NightsProject/Dentica"
     },
     {
       name: "Veridia",
@@ -27,7 +29,8 @@ export default [
         "Engineered a RESTful backend with Flask to handle complex CRUD operations, state management, and efficient data retrieval.",
         "Developed a responsive academic management platform using Vue.js to streamline the administration of students, programs, and colleges."
       ],
-      image: "/gifs/projects/veridia.gif"
+      image: "/gifs/projects/veridia.gif",
+      github: "https://github.com/Ordinary33/CCC181-Web-SSIS"
     },
     {
       name: "RAG Chatbot",
@@ -37,7 +40,8 @@ export default [
         "Developed a decoupled backend with FastAPI to handle asynchronous vector retrieval and natural language generation, ensuring low-latency, context-aware query responses.",
         "Built an interactive Streamlit interface that allows recruiters to seamlessly query project details, technical skills, and academic experience in real-time."
       ],
-      image: "/gifs/projects/rag-chatbot.gif"
+      image: "/gifs/projects/rag-chatbot.gif",
+      github: "https://github.com/Ordinary33/portfolio-chatbot"
     },
     {
       name: "Real-Time ASL Translator",
@@ -47,7 +51,8 @@ export default [
         "Fine-tuned a pretrained ResNet18 model in PyTorch, attaining a 99% validation accuracy by optimizing for robust feature extraction.",
         "Engineered a low-latency inference pipeline using OpenCV, achieving an average model execution time of < 50 ms per frame to ensure seamless continuous processing."
       ],
-      image: "/gifs/projects/asl-translator.gif"
+      image: "/gifs/projects/asl-translator.gif",
+      github: "https://github.com/Ordinary33/ASL-Classifier-CNN"
     },
     {
       name: "CatBoost Loan Approval System",
@@ -57,16 +62,18 @@ export default [
         "Conducted comprehensive exploratory data analysis and feature engineering on a dataset of 50,000 banking records, significantly improving the model’s ability to identify high-risk financial profiles.",
         "Deployed a high-performance REST API via FastAPI and an interactive Gradio web interface, enabling real-time risk assessment and automated decision-making."
       ],
-      image: "/gifs/projects/loan-approval.gif"
+      image: "/gifs/projects/loan-approval.gif",
+      github: "https://github.com/Ordinary33/Realistic-Loan-Approval-Classifier-Model"
     },
     {
-      name: "Neural Collaborative Filtering System",
+      name: "Neural Collaborative Recommendation System",
       tools: ["Python", "PyTorch", "FastAPI", "Streamlit"],
       description: [
         "Engineered a PyTorch-based neural collaborative filtering architecture for cross-domain personalized recommendations, effectively capturing complex user-item interactions.",
         "Trained and evaluated the model on two distinct domains, achieving an MSE of 0.70 on a dataset of 10,000 movies, and an MSE of 3.19 on 271,360 books.",
         "Designed a scalable inference pipeline via FastAPI and an interactive Streamlit frontend, serving real-time, dynamically filtered recommendations in under 1000 ms."
       ],
-      image: "/gifs/projects/neural-filtering.gif"
+      image: "/gifs/projects/neural-filtering.gif",
+      github: "https://github.com/Ordinary33/Collaborative-Filtering-Recommender-System"
     }
   ];

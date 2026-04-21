@@ -69,6 +69,7 @@ export default function Logs() {
                 tools={activeProject.tools}
                 description={activeProject.description}
                 image={activeProject.image}
+                github={activeProject.github}
             />
         )
     }
