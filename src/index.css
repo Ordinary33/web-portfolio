@@ -82,17 +82,15 @@ body {
 
 .crt-overlay {
   position: relative;
-  /* 1. The Physical Casing */
-  border: 14px solid #081408; /* Darker than the grid to look like plastic/metal */
-  border-radius: 3rem; /* Smooth rounded corners */
+  border: 14px solid #081408; 
+  border-radius: 3rem; 
   
-  /* 2. The Shadow that 'seats' the monitor on the grid */
   box-shadow: 
-    0 30px 60px rgba(0,0,0,0.8), /* Bottom shadow for height */
-    0 0 20px rgba(0,0,0,0.4),    /* General outer glow */
-    inset 0 0 10px rgba(0,0,0,0.5); /* Inner rim shadow */
+    0 30px 60px rgba(0,0,0,0.8), 
+    0 0 20px rgba(0,0,0,0.4),    
+    inset 0 0 10px rgba(0,0,0,0.5);
     
-  overflow: hidden; /* This clips your page content to the rounded shape */
+  overflow: hidden; 
 }
 
 .crt-vignette {
@@ -101,7 +99,6 @@ body {
     inset 0 0 30px rgba(10, 28, 10, 0.7);
 }
 
-/* Adjusting your subpixel pseudo-elements so they don't bleed out of the rounding */
 .crt-overlay::before,
 .crt-overlay::after {
   content: "";
@@ -169,16 +166,14 @@ body {
 }
 
 .wasteland-grime {
-  /* Generates organic, randomized "fractal noise" (dirt/dust) via inline SVG */
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   
-  opacity: 0.15; /* Keep it subtle! Too high and you won't be able to read your text */
-  mix-blend-mode: overlay; /* This makes the dirt interact physically with the light behind it */
-  pointer-events: none; /* Crucial: lets you click through the dirt */
-  z-index: 45; /* Sits under the glass glare, but over the monitor output */
+  opacity: 0.15; 
+  mix-blend-mode: overlay; 
+  pointer-events: none; 
+  z-index: 45; 
 }
 
-/* Optional: Fingerprint Smudges */
 .screen-smudges {
   background: radial-gradient(circle at 20% 30%, rgba(0, 0, 0, 0.4) 0%, transparent 15%),
               radial-gradient(circle at 75% 60%, rgba(0, 0, 0, 0.3) 0%, transparent 20%),
@@ -205,4 +200,13 @@ body {
   inset: 0;
   background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.4) 100%);
   pointer-events: none;
+}
+
+
+.custom-terminal-cursor {
+  cursor: url("http://www.rw-designer.com/cursor-extern.php?id=79002"), auto !important;
+}
+
+.custom-terminal-cursor * {
+  cursor: url("http://www.rw-designer.com/cursor-extern.php?id=79002"), auto !important;
 }
