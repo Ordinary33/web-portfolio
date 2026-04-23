@@ -83,9 +83,9 @@ export default function App() {
              <div className="hidden lg:block absolute right-0 top-0 h-[30%] w-[2px] bg-gradient-to-b from-pip-green to-[#0A1C0A]/0 shadow-crt"></div>
              <div className="hidden lg:block absolute right-0 bottom-0 h-[30%] w-[2px] bg-gradient-to-t from-pip-green to-[#0A1C0A]/0 shadow-crt"></div>
 
-             <div className="flex-1 w-full overflow-y-auto no-scrollbar lg:p-10 lg:pt-12">
-               {renderContent()}
-             </div>
+             <div key={activeTab} className="flex-1 w-full overflow-y-auto no-scrollbar lg:p-10 lg:pt-12 terminal-print">
+                {renderContent()}
+              </div>
              
              <div className="mt-auto lg:mt-0 pt-4 lg:pt-0 border-t-2 border-pip-green lg:border-none lg:absolute lg:bottom-0 lg:left-0 flex w-full lg:translate-y-1/2 items-center justify-center gap-2 sm:gap-4 lg:gap-12 flex-wrap lg:flex-nowrap bg-[#0A1C0A] lg:bg-transparent z-10">
                {tabs.map((tab) => (
