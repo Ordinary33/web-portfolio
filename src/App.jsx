@@ -51,10 +51,10 @@ export default function App() {
   }
 
   return (
-    <div className="terminal-bg flex min-h-screen w-full items-center justify-center font-terminal text-pip-green p-2 md:p-6">
+    <div className="tactical-grid-bg flex min-h-screen w-full items-center justify-center font-terminal text-pip-green p-2 md:p-6 overflow-hidden">
       
-      <div className="crt-overlay crt-vignette scanline-effect crt-flicker relative flex w-full max-w-[1100px] h-[95vh] lg:h-[750px] items-center justify-center bg-[#0A1C0A] overflow-hidden">
-  <div className="pointer-events-none absolute inset-0 z-50 rounded-3xl bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent mix-blend-screen"></div>
+      <div className="crt-overlay crt-vignette scanline-effect crt-flicker flex w-full max-w-[1100px] h-[95vh] lg:h-[750px] items-center justify-center bg-[#0A1C0A]">
+      <div className="pointer-events-none absolute inset-0 z-50 rounded-[2.5rem] bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent mix-blend-screen"></div>
 
 
     <div className="absolute inset-0 w-full h-full wasteland-grime"></div>
