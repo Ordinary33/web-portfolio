@@ -2,10 +2,11 @@ import { useState } from 'react';
 import AboutMe from '../pages/tabs/Aboutme'; 
 import Education  from '../pages/tabs/Education';
 import Skills from '../pages/tabs/Skills';
+import Perks from '../pages/tabs/Perks'
 
 export default function Status() {
   const [activeSection, setActiveSection] = useState('Stats');
-  const sections = ['Stats', 'Education', 'Skills'];
+  const sections = ['Stats', 'Education', 'Skills', 'Perks'];
 
 
   const renderContent = () => {
@@ -16,6 +17,8 @@ export default function Status() {
         return <Education />;
       case 'Skills':
         return <Skills />;
+      case 'Perks':
+        return <Perks />
       default:
         return null;
     }

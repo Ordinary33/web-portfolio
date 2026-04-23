@@ -40,7 +40,7 @@ export default function ProjectCard({name, tools, description, image, github}) {
 
                 <div className="mb-4 flex items-center gap-2">
                     <span className="text-[10px] uppercase tracking-[0.2em] opacity-50 lg:text-xs">
-                        Technical_Specifications
+                       Description
                     </span>
                     <div className="h-[1px] flex-1 bg-pip-mid/20"></div>
                 </div>
