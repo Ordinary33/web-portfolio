@@ -37,9 +37,6 @@ export default function App() {
            </div>
            <div className="hidden lg:block absolute left-[15rem] right-0 top-0 h-[2px] bg-pip-green shadow-crt"></div>
 
-           <div className="lg:hidden text-2xl text-center border-b-2 border-pip-green pb-2 mb-4 tracking-widest drop-shadow-text-glow">
-             {activeTab === 'Status' ? 'PROFILES' : activeTab.toUpperCase()}
-           </div>
 
            <div className="flex-1 w-full overflow-y-auto no-scrollbar lg:p-10 lg:pt-12">
              {renderContent()}
