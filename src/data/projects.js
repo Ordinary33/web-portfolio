@@ -7,7 +7,7 @@ export default [
         "Transaction Engine: Real-time digital wallet system utilizing full-duplex WebSockets for instantaneous balance top-ups and live transaction status synchronization.",
         "User Interface: Cross-device compatible Nuxt.js frontend optimized for high-performance community trading and seamless navigation."
       ],
-      image: "/gifs/projects/libris.gif",
+      image: "https://res.cloudinary.com/ddholly8f/image/upload/v1776950931/Libris_prizuw.png",
       github: "https://github.com/xbryan25/libris-github"
     },
     {
@@ -18,7 +18,7 @@ export default [
         "Data Architecture: Secure MySQL relational database structured for high-integrity storage of comprehensive patient dossiers, treatment timelines, and financial ledgers.",
         "Operational Subsystems: Integrated modules for real-time analytics reporting and automated patient scheduling, optimizing clinic efficiency and resource allocation."
       ],
-      image: "/gifs/projects/dentica.gif",
+      image: "https://res.cloudinary.com/ddholly8f/image/upload/v1776950930/Dentica_t6iovv.png",
       github: "https://github.com/NightsProject/Dentica"
     },
     {
@@ -29,7 +29,7 @@ export default [
         "Backend Infrastructure: RESTful Flask service facilitating complex state management, efficient data retrieval, and full-cycle CRUD operations.",
         "Administrative Interface: Responsive Vue.js dashboard engineered to centralize and streamline the management of students, programs, and colleges."
       ],
-      image: "/gifs/projects/veridia.gif",
+      image: "https://res.cloudinary.com/ddholly8f/image/upload/v1776950929/Veridia_ut3psj.png",
       github: "https://github.com/Ordinary33/CCC181-Web-SSIS"
     },
     {
@@ -40,7 +40,7 @@ export default [
         "Inference API: Asynchronous FastAPI backend managing low-latency vector database retrieval and context-aware natural language generation.",
         "Client Interface: Interactive Streamlit frontend engineered for real-time querying of academic, technical, and project-based experience."
       ],
-      image: "/gifs/projects/rag-chatbot.gif",
+      image: "https://res.cloudinary.com/ddholly8f/image/upload/v1776950930/RAG_giimjx.png",
       github: "https://github.com/Ordinary33/portfolio-chatbot"
     },
     {
@@ -51,7 +51,7 @@ export default [
         "Neural Architecture: PyTorch-based ResNet18 model fine-tuned for robust feature extraction, achieving 99% validation accuracy on complex gesture datasets.",
         "Inference Pipeline: Low-latency OpenCV processing layer delivering continuous sub-50ms frame execution for seamless gesture translation."
       ],
-      image: "/gifs/projects/asl-translator.gif",
+      image: "",
       github: "https://github.com/Ordinary33/ASL-Classifier-CNN"
     },
     {
@@ -62,7 +62,7 @@ export default [
         "Data Pipeline: Comprehensive feature engineering workflow processing 50,000 banking records to isolate high-risk financial profile indicators.",
         "Deployment Architecture: High-performance FastAPI REST endpoint coupled with an interactive Gradio interface for real-time automated decision-making."
       ],
-      image: "/gifs/projects/loan-approval.gif",
+      image: "https://res.cloudinary.com/ddholly8f/image/upload/v1776950930/loanapproval_egd8xx.png",
       github: "https://github.com/Ordinary33/Realistic-Loan-Approval-Classifier-Model"
     },
     {
@@ -73,7 +73,7 @@ export default [
         "Model Performance: Cross-domain training system achieving 0.70 MSE on cinematic datasets (10k items) and 3.19 MSE on literary datasets (271k+ items).",
         "Delivery System: Scalable FastAPI inference pipeline and Streamlit dashboard serving dynamic, personalized recommendations with sub-second latency."
       ],
-      image: "/gifs/projects/neural-filtering.gif",
+      image: "https://res.cloudinary.com/ddholly8f/image/upload/v1776950932/recommender_fpxuxm.png",
       github: "https://github.com/Ordinary33/Collaborative-Filtering-Recommender-System"
     },
     {
@@ -84,7 +84,7 @@ export default [
         "Inference Engine: Engineered an ONNX-optimized CPU inference pipeline featuring strict CenterCrop spatial preprocessing to prevent artifact degradation during image normalization.",
         "Microservice Architecture: Deployed a fully decoupled forensic analysis system utilizing a FastAPI backend and interactive Gradio frontend for high-fidelity media verification."
       ],
-      image: "/gifs/projects/synthetic-detector.gif",
+      image: "https://res.cloudinary.com/ddholly8f/image/upload/v1776950933/syntheticimage_p50aql.png",
       github: "https://github.com/Ordinary33/Synthetic-Image-Detector" 
     }
   ];

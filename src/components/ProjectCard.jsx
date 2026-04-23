@@ -30,14 +30,20 @@ export default function ProjectCard({name, tools, description, image, github}) {
         </div>
 
             <div className="flex flex-col">
-                
+            {image ? (
                 <div className="mb-8 w-full border border-pip-mid/30 bg-pip-black p-1">
                     <div 
                         className="h-48 w-full bg-cover bg-center bg-no-repeat lg:h-80 opacity-90"
                         style={{ backgroundImage: `url(${image})` }}
                     />
                 </div>
-
+            ):  (   <div className="mb-8 w-full border border-pip-mid/30 bg-pip-black p-1">
+                        <div className="flex h-48 w-full items-center justify-center lg:h-80 bg-pip-dark/20">
+                            <span className="text-2xl sm:text-4xl text-center font-bold tracking-widest text-pip-green/50 drop-shadow-text-glow animate-pulse">
+                                // NULL
+                            </span>
+                        </div>
+                    </div>)}
                 <div className="mb-4 flex items-center gap-2">
                     <span className="text-[10px] uppercase tracking-[0.2em] opacity-50 lg:text-xs">
                        Description
