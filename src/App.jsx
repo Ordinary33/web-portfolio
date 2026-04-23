@@ -53,7 +53,7 @@ export default function App() {
   return (
     <div className="terminal-bg flex min-h-screen w-full items-center justify-center font-terminal text-pip-green p-2 md:p-6">
       
-      <div className="crt-overlay relative flex w-full max-w-[1100px] h-[95vh] lg:h-[750px] items-center justify-center bg-[#0A1C0A] overflow-hidden">
+      <div className="crt-overlay crt-vignette scanline-effect crt-flicker relative flex w-full max-w-[1100px] h-[95vh] lg:h-[750px] items-center justify-center bg-[#0A1C0A] overflow-hidden">
 
         
         {isBooting ? (
