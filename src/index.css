@@ -21,6 +21,15 @@
   100% { clip-path: inset(0 0 0 0); }
 }
 
+@keyframes hard-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.caret-blink {
+  animation: hard-blink 1s step-end infinite; 
+}
+
 .terminal-print {
   animation: crt-print 0.35s steps(30, end) forwards;
 }
@@ -47,8 +56,8 @@
 }
 
 @font-face {
-  font-family: 'Monofonto';
-  src: url('./assets/fonts/monofonto.ttf') format('truetype');
+  font-family: 'monofonto'; 
+  src: url('/fonts/monofonto.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
