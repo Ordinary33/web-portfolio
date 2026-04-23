@@ -54,7 +54,19 @@ export default function App() {
     <div className="terminal-bg flex min-h-screen w-full items-center justify-center font-terminal text-pip-green p-2 md:p-6">
       
       <div className="crt-overlay crt-vignette scanline-effect crt-flicker relative flex w-full max-w-[1100px] h-[95vh] lg:h-[750px] items-center justify-center bg-[#0A1C0A] overflow-hidden">
+  <div className="pointer-events-none absolute inset-0 z-50 rounded-3xl bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent mix-blend-screen"></div>
 
+
+    <div className="absolute inset-0 w-full h-full wasteland-grime"></div>
+    <div className="absolute inset-0 w-full h-full screen-smudges"></div>
+
+
+    <div className="absolute left-3 top-3 text-pip-green/30 text-xs opacity-50">⊕</div>
+
+        <div className="absolute left-3 top-3 text-pip-green/30 text-xs opacity-50">⊕</div>
+        <div className="absolute right-3 top-3 text-pip-green/30 text-xs opacity-50">⊕</div>
+        <div className="absolute bottom-3 left-3 text-pip-green/30 text-xs opacity-50">⊕</div>
+        <div className="absolute bottom-3 right-3 text-pip-green/30 text-xs opacity-50">⊕</div>
         
         {isBooting ? (
           
