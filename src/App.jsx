@@ -3,7 +3,7 @@ import Status from './pages/Status'
 import Logs from './pages/Logs'
 import Quests from './pages/Quests'
 import Radio from './pages/Radio'
-import { playClickSound, playHoverSound } from './sfx'
+import { playSwitchTabSound, playHoverSound, playSwitchPageSound } from './sfx'
 
 const BOOT_SEQUENCE = [
   "ROBCO INDUSTRIES UNIFIED OPERATING SYSTEM",
@@ -60,6 +60,7 @@ export default function App() {
       }
 
       setIsBooting(false);
+      playSwitchPageSound();
     };
 
     runBootSequence();
@@ -106,9 +107,10 @@ export default function App() {
         
          {!isPoweredOn ? (
           <div className="flex h-screen w-full items-center justify-center bg-black font-terminal text-pip-green custom-terminal-cursor">
-          <button 
+          <button
+            onMouseEnter={playHoverSound} 
             onClick={handlePowerOn}
-            className="text-xl tracking-widest hover:drop-shadow-text-glow hover:bg-pip-green hover:text-black px-6 py-2 border border-transparent hover:border-pip-green transition-all"
+            className="text-xl tracking-widest hover:drop-shadow-text-glow hover:bg-pip-green hover:text-black px-6 py-2 border animate-pulse border-transparent hover:border-pip-green transition-all"
           >
             [ SYSTEM OFFLINE : CLICK TO INITIALIZE ]
           </button>
@@ -147,7 +149,7 @@ export default function App() {
                    key={tab}
                    onMouseEnter={playHoverSound}
                    onClick={() => {
-                    playClickSound();
+                    playSwitchPageSound();
                     setActiveTab(tab);
                   }}
                    className={`bg-[#0A1C0A] px-3 sm:px-6 py-1 text-lg sm:text-xl lg:text-2xl tracking-widest transition-all ${

@@ -5,9 +5,14 @@ export const playHoverSound = () => {
     audio.play().catch(err => console.log("Audio blocked:", err));
   };
 
-
-export const playClickSound = () => {
+export const playSwitchTabSound = () => {
     const clickSound = new Audio('/sfx/tabswitch.wav');
+    clickSound.volume = 0.4; 
+    clickSound.play().catch(err => console.log("Audio blocked:", err));
+  };
+
+  export const playSwitchPageSound = () => {
+    const clickSound = new Audio('/sfx/pageswitch.wav');
     clickSound.volume = 0.4; 
     clickSound.play().catch(err => console.log("Audio blocked:", err));
   };

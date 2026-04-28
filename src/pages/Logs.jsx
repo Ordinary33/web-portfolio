@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react"
 import projectsData from "../data/projects"
 import ProjectCard from "../components/ProjectCard";
-import { playClickSound, playHoverSound } from "../sfx"
+import { playSwitchTabSound, playHoverSound } from "../sfx"
 
 const TabItem = ({ name, isActive, onClick }) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -92,7 +92,7 @@ export default function Logs() {
                                 name={project.name}
                                 isActive={activeSection === project.name}
                                 onClick={() => {
-                                    playClickSound();
+                                    playSwitchTabSound();
                                     setActiveSection(project.name)
                                 }}
                             />

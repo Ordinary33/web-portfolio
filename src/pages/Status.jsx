@@ -3,7 +3,7 @@ import AboutMe from '../pages/tabs/Aboutme';
 import Education  from '../pages/tabs/Education';
 import Skills from '../pages/tabs/Skills';
 import Perks from '../pages/tabs/Perks'
-import { playClickSound, playHoverSound } from '../sfx';
+import { playSwitchTabSound, playHoverSound } from '../sfx';
 
 export default function Status() {
   const [activeSection, setActiveSection] = useState('Stats');
@@ -45,7 +45,7 @@ export default function Status() {
                 key={section}
                 onMouseEnter={playHoverSound}
                 onClick={() => {
-                  playClickSound();
+                  playSwitchTabSound();
                   setActiveSection(section);
                 }}
                 className={`flex cursor-pointer items-center justify-center lg:justify-start gap-2 hover:drop-shadow-text-glow shrink-0 ${activeSection === section ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}
