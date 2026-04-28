@@ -35,6 +35,18 @@ export default function App() {
     setIsPoweredOn(true);
   }
 
+  const playHoverSound = () => {
+    const hoverSound = new Audio('/sfx/tick.wav');
+    hoverSound.volume = 0.15; 
+    hoverSound.play().catch(err => console.log("Audio blocked:", err));
+  };
+
+  const playClickSound = () => {
+    const clickSound = new Audio('/sfx/pageswitch.wav');
+    clickSound.volume = 0.4; 
+    clickSound.play().catch(err => console.log("Audio blocked:", err));
+  };
+
   useEffect(() => {
     if (!isPoweredOn) return;
 
@@ -51,6 +63,15 @@ export default function App() {
     runBootSequence();
     
   }, [isPoweredOn]);
+
+  useEffect(() => {
+    if (!isPoweredOn || isBooting) return;
+
+    const renderSound = new Audio('/sfx/tabswitch.mp3'); 
+    renderSound.volume = 0.2; 
+    renderSound.play().catch(err => console.log("Audio error:", err));
+
+  }, [activeTab, isPoweredOn, isBooting]);
 
   const renderContent = () => {
     switch(activeTab) {
@@ -128,7 +149,11 @@ export default function App() {
                {tabs.map((tab) => (
                  <button
                    key={tab}
-                   onClick={() => setActiveTab(tab)}
+                   onMouseEnter={playHoverSound}
+                   onClick={() => {
+                    playClickSound();
+                    setActiveTab(tab);
+                  }}
                    className={`bg-[#0A1C0A] px-3 sm:px-6 py-1 text-lg sm:text-xl lg:text-2xl tracking-widest transition-all ${
                      activeTab === tab 
                        ? 'border-2 border-pip-green drop-shadow-text-glow shadow-crt' 

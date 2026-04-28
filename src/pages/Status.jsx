@@ -3,11 +3,11 @@ import AboutMe from '../pages/tabs/Aboutme';
 import Education  from '../pages/tabs/Education';
 import Skills from '../pages/tabs/Skills';
 import Perks from '../pages/tabs/Perks'
+import { playClickSound, playHoverSound } from '../sfx';
 
 export default function Status() {
   const [activeSection, setActiveSection] = useState('Stats');
   const sections = ['Stats', 'Education', 'Skills', 'Perks'];
-
 
   const renderContent = () => {
     switch (activeSection) {
@@ -43,7 +43,11 @@ export default function Status() {
             {sections.map(section => (
               <div 
                 key={section}
-                onClick={() => setActiveSection(section)}
+                onMouseEnter={playHoverSound}
+                onClick={() => {
+                  playClickSound();
+                  setActiveSection(section);
+                }}
                 className={`flex cursor-pointer items-center justify-center lg:justify-start gap-2 hover:drop-shadow-text-glow shrink-0 ${activeSection === section ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}
               >
                 <div className={`hidden lg:block h-3 w-3 ${activeSection === section ? 'bg-pip-green' : 'bg-transparent'}`}></div>
