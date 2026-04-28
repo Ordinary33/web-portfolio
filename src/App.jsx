@@ -3,6 +3,7 @@ import Status from './pages/Status'
 import Logs from './pages/Logs'
 import Quests from './pages/Quests'
 import Radio from './pages/Radio'
+import { playClickSound, playHoverSound } from './sfx'
 
 const BOOT_SEQUENCE = [
   "ROBCO INDUSTRIES UNIFIED OPERATING SYSTEM",
@@ -31,21 +32,14 @@ export default function App() {
     const bootSound = new Audio('/sfx/screenbootup.wav'); 
     bootSound.volume = 0.6; 
     bootSound.play().catch(err => console.log("Audio error:", err));
+
+    const ambientStatic = new Audio('/sfx/radio_static.wav'); 
+    ambientStatic.volume = 0.05; 
+    ambientStatic.loop = true;   
+    ambientStatic.play().catch(err => console.log("Audio error:", err));
     
     setIsPoweredOn(true);
   }
-
-  const playHoverSound = () => {
-    const hoverSound = new Audio('/sfx/tick.wav');
-    hoverSound.volume = 0.15; 
-    hoverSound.play().catch(err => console.log("Audio blocked:", err));
-  };
-
-  const playClickSound = () => {
-    const clickSound = new Audio('/sfx/pageswitch.wav');
-    clickSound.volume = 0.4; 
-    clickSound.play().catch(err => console.log("Audio blocked:", err));
-  };
 
   useEffect(() => {
     if (!isPoweredOn) return;
