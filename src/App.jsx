@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Status from './pages/Status'
 import Logs from './pages/Logs'
 import Quests from './pages/Quests'
@@ -28,10 +28,12 @@ export default function App() {
   const [activeTab, setActiveTab] = useState('Status');
   const tabs = ['Status', 'Logs', 'Quests', 'Radio'];
 
+  const bootAudioRef = useRef(null)
+
   const handlePowerOn = () => {
-    const bootSound = new Audio('/sfx/screenbootup.wav'); 
-    bootSound.volume = 0.6; 
-    bootSound.play().catch(err => console.log("Audio error:", err));
+    bootAudioRef.current = new Audio('/sfx/screenbootup.wav'); 
+    bootAudioRef.current.volume = 0.6; 
+    bootAudioRef.current.play().catch(err => console.log("Audio error:", err));
 
     const ambientStatic = new Audio('/sfx/radio_static.wav'); 
     ambientStatic.volume = 0.05; 
@@ -51,6 +53,12 @@ export default function App() {
       }
       
       await new Promise(resolve => setTimeout(resolve, 1000));
+
+      if (bootAudioRef.current) {
+        bootAudioRef.current.pause();
+        bootAudioRef.current.currentTime = 0; 
+      }
+
       setIsBooting(false);
     };
 
@@ -77,18 +85,6 @@ export default function App() {
     }
   }
 
-  if (!isPoweredOn) {
-    return (
-      <div className="flex h-screen w-full items-center justify-center bg-black font-terminal text-pip-green custom-terminal-cursor">
-        <button 
-          onClick={handlePowerOn}
-          className="text-xl tracking-widest hover:drop-shadow-text-glow hover:bg-pip-green hover:text-black px-6 py-2 border border-transparent hover:border-pip-green transition-all"
-        >
-          [ SYSTEM OFFLINE : CLICK TO INITIALIZE ]
-        </button>
-      </div>
-    );
-  }
 
   return (
     <div className="tactical-grid-bg custom-terminal-cursor flex min-h-screen w-full items-center justify-center font-terminal text-pip-green p-4 md:p-10">
@@ -108,19 +104,25 @@ export default function App() {
         <div className="absolute bottom-3 left-3 text-pip-green/30 text-xs opacity-50">⊕</div>
         <div className="absolute bottom-3 right-3 text-pip-green/30 text-xs opacity-50">⊕</div>
         
-        {isBooting ? (
-          
+         {!isPoweredOn ? (
+          <div className="flex h-screen w-full items-center justify-center bg-black font-terminal text-pip-green custom-terminal-cursor">
+          <button 
+            onClick={handlePowerOn}
+            className="text-xl tracking-widest hover:drop-shadow-text-glow hover:bg-pip-green hover:text-black px-6 py-2 border border-transparent hover:border-pip-green transition-all"
+          >
+            [ SYSTEM OFFLINE : CLICK TO INITIALIZE ]
+          </button>
+        </div>
+         ) : isBooting ? (
           <div className="flex h-full w-full flex-col justify-start p-6 lg:p-12">
-            {bootLines.map((line, index) => (
-              <p key={index} className="text-sm sm:text-base lg:text-lg mb-1 drop-shadow-text-glow uppercase">
-                {line}
-              </p>
-            ))}
-            <div className="mt-1 h-5 w-3 bg-pip-green animate-pulse shadow-crt"></div>
-          </div>
-
-        ) : (
-
+                      {bootLines.map((line, index) => (
+                        <p key={index} className="text-sm sm:text-base lg:text-lg mb-1 drop-shadow-text-glow uppercase">
+                          {line}
+                        </p>
+                      ))}
+                      <div className="mt-1 h-5 w-3 bg-pip-green animate-pulse shadow-crt"></div>
+            </div>
+         ) : (
           <div className="relative flex flex-col h-full w-full lg:h-[80%] lg:w-[90%] border-2 border-pip-green shadow-crt lg:border-none lg:shadow-none p-4 lg:p-0">
 
              <div className="hidden lg:block absolute left-0 top-0 h-[2px] w-[3rem] bg-pip-green shadow-crt"></div>
@@ -160,7 +162,9 @@ export default function App() {
              </div>
 
           </div>
-        )}
+         )
+        }
+
 
       </div>
     </div>
