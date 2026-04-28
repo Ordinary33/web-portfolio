@@ -20,13 +20,24 @@ const BOOT_SEQUENCE = [
 ];
 
 export default function App() {
+  const [isPoweredOn, setIsPoweredOn] = useState(false);
   const [isBooting, setIsBooting] = useState(true);
   const [bootLines, setBootLines] = useState([]);
   
   const [activeTab, setActiveTab] = useState('Status');
   const tabs = ['Status', 'Logs', 'Quests', 'Radio'];
 
+  const handlePowerOn = () => {
+    const bootSound = new Audio('/sfx/screenbootup.wav'); 
+    bootSound.volume = 0.6; 
+    bootSound.play().catch(err => console.log("Audio error:", err));
+    
+    setIsPoweredOn(true);
+  }
+
   useEffect(() => {
+    if (!isPoweredOn) return;
+
     const runBootSequence = async () => {
       for (let i = 0; i < BOOT_SEQUENCE.length; i++) {
         await new Promise(resolve => setTimeout(resolve, Math.random() * 300 + 100)); 
@@ -38,7 +49,8 @@ export default function App() {
     };
 
     runBootSequence();
-  }, []);
+    
+  }, [isPoweredOn]);
 
   const renderContent = () => {
     switch(activeTab) {
@@ -48,6 +60,19 @@ export default function App() {
       case 'Radio': return <Radio />
       default: return null
     }
+  }
+
+  if (!isPoweredOn) {
+    return (
+      <div className="flex h-screen w-full items-center justify-center bg-black font-terminal text-pip-green custom-terminal-cursor">
+        <button 
+          onClick={handlePowerOn}
+          className="text-xl tracking-widest hover:drop-shadow-text-glow hover:bg-pip-green hover:text-black px-6 py-2 border border-transparent hover:border-pip-green transition-all"
+        >
+          [ SYSTEM OFFLINE : CLICK TO INITIALIZE ]
+        </button>
+      </div>
+    );
   }
 
   return (
