@@ -3,7 +3,8 @@ import Status from './pages/Status'
 import Logs from './pages/Logs'
 import Quests from './pages/Quests'
 import Radio from './pages/Radio'
-import { playSwitchTabSound, playHoverSound, playSwitchPageSound } from './sfx'
+import Terminal from './pages/Terminal'
+import { playHoverSound, playSwitchPageSound } from './sfx'
 
 const BOOT_SEQUENCE = [
   "ROBCO INDUSTRIES UNIFIED OPERATING SYSTEM",
@@ -26,7 +27,7 @@ export default function App() {
   const [bootLines, setBootLines] = useState([]);
   
   const [activeTab, setActiveTab] = useState('Status');
-  const tabs = ['Status', 'Logs', 'Quests', 'Radio'];
+  const tabs = ['Status', 'Logs', 'Quests', 'Radio', 'TERMINAL'];
 
   const bootAudioRef = useRef(null)
 
@@ -82,6 +83,7 @@ export default function App() {
       case 'Logs': return <Logs />
       case 'Quests': return <Quests />
       case 'Radio': return <Radio />
+      case 'TERMINAL': return <Terminal />
       default: return null
     }
   }
