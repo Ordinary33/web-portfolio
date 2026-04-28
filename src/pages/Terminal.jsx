@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import '../Terminal.css'; 
+import '../Terminal.css';
 
 export default function Terminal() {
   const [messages, setMessages] = useState([
@@ -7,13 +7,21 @@ export default function Terminal() {
   ]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+
   const messagesEndRef = useRef(null);
+  const inputRef = useRef(null)
 
   const [sessionId] = useState(() => Math.random().toString(36).substring(7));
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
+
+  useEffect(() => {
+    if (!isTyping && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isTyping]);
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -27,7 +35,7 @@ export default function Terminal() {
     setMessages((prev) => [...prev, { role: 'bot', text: '' }]);
 
     try {
-      const response = await fetch('https://portfolio-chatbot-s1ta.onrender.com/chat', { 
+      const response = await fetch('https://portfolio-chatbot-s1ta.onrender.com/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: input, session_id: sessionId }),
@@ -62,8 +70,8 @@ export default function Terminal() {
 
   return (
     <div className="terminal-wrapper">
-      <div className="scanlines"></div> 
-      
+      <div className="scanlines"></div>
+
       <div className="terminal-container">
         <div className="terminal-messages">
           {messages.map((msg, index) => (
@@ -73,13 +81,14 @@ export default function Terminal() {
             </div>
           ))}
           {isTyping && <div className="message bot typing">Processing...</div>}
-          
-          <div ref={messagesEndRef} /> 
+
+          <div ref={messagesEndRef} />
         </div>
 
         <form onSubmit={sendMessage} className="terminal-input-form">
           <span className="prompt">{'> '}</span>
           <input
+            ref={inputRef}
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -88,7 +97,6 @@ export default function Terminal() {
             spellCheck="false"
             autoComplete="off"
           />
-          <span className="cursor">█</span>
         </form>
       </div>
     </div>

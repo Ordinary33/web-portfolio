@@ -141,7 +141,7 @@ export default function App() {
              <div className="hidden lg:block absolute right-0 top-0 h-[30%] w-[2px] bg-gradient-to-b from-pip-green to-[#0A1C0A]/0 shadow-crt"></div>
              <div className="hidden lg:block absolute right-0 bottom-0 h-[30%] w-[2px] bg-gradient-to-t from-pip-green to-[#0A1C0A]/0 shadow-crt"></div>
 
-             <div key={activeTab} className="flex-1 w-full overflow-y-auto no-scrollbar lg:p-10 lg:pt-12 terminal-print">
+             <div key={activeTab} className="flex-1 w-full flex flex-col overflow-hidden lg:p-10 lg:pt-12 terminal-print">
                 {renderContent()}
               </div>
              
