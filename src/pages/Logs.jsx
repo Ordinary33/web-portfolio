@@ -79,7 +79,7 @@ export default function Logs() {
     }
 
     return (
-        <div className="flex h-full flex-col">
+        <div className="flex h-full flex-col overflow-y-auto pb-10">
             <div className="flex flex-col lg:flex-row flex-1 gap-6 lg:gap-10 lg:min-h-0">
 
                 <div className="flex w-full lg:w-1/3 flex-col items-center lg:items-start gap-6 border-b border-pip-green/30 pb-6 lg:border-none lg:pb-0">

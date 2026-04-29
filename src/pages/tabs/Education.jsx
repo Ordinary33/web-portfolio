@@ -17,7 +17,7 @@ export default function Education() {
     ];
   
     return (
-      <div className="flex h-full w-full flex-col border border-pip-green p-6 shadow-crt drop-shadow-text-glow lg:p-10 lg:min-h-0">
+      <div className="flex min-h-full lg:h-full w-full flex-col border border-pip-green p-6 shadow-crt drop-shadow-text-glow lg:p-10 pb-16 lg:min-h-0">
         
         <div className="mb-6 grid shrink-0 grid-cols-1 gap-4 border-b border-pip-green/40 pb-6 md:grid-cols-3 md:gap-8 lg:mb-8">
           <div className="flex flex-col">

@@ -46,10 +46,8 @@ export default function Skills() {
   ];
 
   return (
-    // The main container locked exactly to the height of the terminal
-    <div className="flex h-full w-full flex-col border border-pip-green p-4 shadow-crt drop-shadow-text-glow lg:p-8 lg:min-h-0">
+    <div className="flex min-h-[50vh] lg:h-full w-full flex-col border border-pip-green p-4 shadow-crt drop-shadow-text-glow lg:p-8 lg:min-h-0">
       
-      {/* 1. TOP ROW: Pinned to the top using shrink-0 */}
       <div className="mb-6 flex shrink-0 flex-wrap justify-center gap-x-4 gap-y-2 border-b border-pip-mid/50 pb-4 lg:mb-8 lg:gap-x-8">
         {categories.map((category) => (
           <div
@@ -67,8 +65,6 @@ export default function Skills() {
         ))}
       </div>
 
-      {/* 2. THE SCROLLABLE SKILLS CLOUD */}
-      {/* Replaced 'overflow-hidden' with 'overflow-y-auto pip-scrollbar' and added pr-2/pr-4 for the custom scrollbar */}
       <div className="flex flex-1 flex-wrap content-start justify-center gap-3 overflow-y-auto pip-scrollbar pr-2 pb-4 lg:gap-4 lg:pr-4">
         {skillsData.map((skill, index) => {
           

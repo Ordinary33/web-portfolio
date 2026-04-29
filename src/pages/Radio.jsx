@@ -18,7 +18,7 @@ export default function Radio() {
   };
 
   return (
-    <div className="flex h-full w-full flex-col border border-pip-green p-4 shadow-crt drop-shadow-text-glow lg:p-8">
+    <div className="flex min-h-full lg:h-full w-full flex-col border border-pip-green p-4 shadow-crt drop-shadow-text-glow lg:p-8 pb-16">
       
       <div className="mb-8 flex shrink-0 flex-col border-b border-pip-mid/50 pb-6">
         <div className="flex items-center justify-between">
