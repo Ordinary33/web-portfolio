@@ -29,7 +29,7 @@ const TabItem = ({ name, isActive, onClick }) => {
                 setIsHovered(true);
             }}
             onMouseLeave={() => setIsHovered(false)}
-            className={`flex w-full overflow-hidden cursor-pointer items-center justify-center lg:justify-start gap-2 hover:drop-shadow-text-glow shrink-0 ${
+            className={`flex w-auto lg:w-full px-2 lg:px-0 overflow-hidden cursor-pointer items-center justify-center lg:justify-start gap-2 hover:drop-shadow-text-glow shrink-0 ${
                 isActive ? 'opacity-100' : 'opacity-60 hover:opacity-100'
             }`}
         >
@@ -41,7 +41,7 @@ const TabItem = ({ name, isActive, onClick }) => {
                     <div className="absolute inset-0 flex items-center z-10">
                         <marquee scrollamount="5" className="whitespace-nowrap w-full">
                             {name}
-                        </marquee>z``
+                        </marquee> 
                     </div>
                 )}
 
