@@ -1,17 +1,13 @@
 import { useState, useRef, useEffect } from 'react';
 import '../Terminal.css';
 
-export default function Terminal() {
-  const [messages, setMessages] = useState([
-    { role: 'bot', text: 'ROBCO INDUSTRIES UNIFIED OPERATING SYSTEM\nCOPYRIGHT 2075-2077 ROBCO INDUSTRIES\n-Server 1-\n\nHusnie Archive Unit standing by. Awaiting query...' }
-  ]);
+export default function Terminal({ messages, setMessages, isTyping, setIsTyping, sessionId }) {
+
   const [input, setInput] = useState('');
-  const [isTyping, setIsTyping] = useState(false);
 
   const messagesContainerRef = useRef(null);
   const inputRef = useRef(null)
 
-  const [sessionId] = useState(() => Math.random().toString(36).substring(7));
 
   useEffect(() => {
     if (messagesContainerRef.current) {

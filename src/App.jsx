@@ -31,6 +31,12 @@ export default function App() {
 
   const bootAudioRef = useRef(null)
 
+  const [terminalMessages, setTerminalMessages] = useState([
+    { role: 'bot', text: 'ROBCO INDUSTRIES UNIFIED OPERATING SYSTEM\nCOPYRIGHT 2075-2077 ROBCO INDUSTRIES\n-Server 1-\n\nHusnie Archive Unit standing by. Awaiting query...' }
+  ]);
+  const [isBotTyping, setIsBotTyping] = useState(false);
+  const [terminalSessionId] = useState(() => Math.random().toString(36).substring(7));
+
   const handlePowerOn = () => {
     bootAudioRef.current = new Audio('/sfx/screenbootup.wav'); 
     bootAudioRef.current.volume = 0.6; 
@@ -83,7 +89,15 @@ export default function App() {
       case 'Logs': return <Logs />
       case 'Quests': return <Quests />
       case 'Radio': return <Radio />
-      case 'TERMINAL': return <Terminal />
+      case 'TERMINAL': 
+      return (
+        <Terminal 
+          messages={terminalMessages} 
+          setMessages={setTerminalMessages}
+          isTyping={isBotTyping}
+          setIsTyping={setIsBotTyping}
+          sessionId={terminalSessionId}
+        /> )
       default: return null
     }
   }
