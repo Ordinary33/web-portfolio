@@ -55,16 +55,21 @@ export default function Terminal() {
         done = doneReading;
         const chunkValue = decoder.decode(value, { stream: true });
 
-        setMessages((prev) => {
-          const newMessages = [...prev];
-          const lastIndex = newMessages.length - 1;
-          newMessages[lastIndex] = {
-            ...newMessages[lastIndex],
-            text: newMessages[lastIndex].text + chunkValue,
-          };
-          return newMessages;
-        });
+        for (let i = 0; i < chunkValue.length; i++) {
+          setMessages((prev) => {
+            const newMessages = [...prev];
+            const lastIndex = newMessages.length - 1;
+            newMessages[lastIndex] = {
+              ...newMessages[lastIndex],
+              text: newMessages[lastIndex].text + chunkValue[i], 
+            };
+            return newMessages;
+          });
+          
+          await new Promise(resolve => setTimeout(resolve, 15)); 
+        }
       }
+
     } catch (error) {
       console.error("Terminal connection lost:", error);
       setMessages((prev) => [...prev, { role: 'bot', text: 'ERROR: CONNECTION TO ARCHIVE LOST.' }]);
@@ -85,7 +90,9 @@ export default function Terminal() {
               <span className="text" style={{ whiteSpace: 'pre-wrap' }}>{msg.text}</span>
             </div>
           ))}
-          {isTyping && <div className="message bot typing">Processing...</div>}
+          {isTyping && messages[messages.length - 1]?.text === '' && (
+            <div className="message bot typing">Processing...</div>
+          )}
         </div>
 
         <form onSubmit={sendMessage} className="terminal-input-form">
