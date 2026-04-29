@@ -8,13 +8,18 @@ export default function Terminal() {
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
 
-  const messagesEndRef = useRef(null);
+  const messagesContainerRef = useRef(null);
   const inputRef = useRef(null)
 
   const [sessionId] = useState(() => Math.random().toString(36).substring(7));
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (messagesContainerRef.current) {
+      messagesContainerRef.current.scrollTo({
+        top: messagesContainerRef.current.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
   }, [messages]);
 
   useEffect(() => {
@@ -73,7 +78,7 @@ export default function Terminal() {
       <div className="scanlines"></div>
 
       <div className="terminal-container">
-        <div className="terminal-messages">
+        <div className="terminal-messages" ref={messagesContainerRef}>
           {messages.map((msg, index) => (
             <div key={index} className={`message ${msg.role}`}>
               {msg.role === 'user' && <span className="prompt">{'> '}</span>}
@@ -81,8 +86,6 @@ export default function Terminal() {
             </div>
           ))}
           {isTyping && <div className="message bot typing">Processing...</div>}
-
-          <div ref={messagesEndRef} />
         </div>
 
         <form onSubmit={sendMessage} className="terminal-input-form">

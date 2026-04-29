@@ -28,13 +28,12 @@
 }
 
 .terminal-container {
+    position: relative;
+    height: 100%; 
+    width: 100%;
+    overflow: hidden; 
     display: flex;
     flex-direction: column;
-    height: 100%; 
-    padding: 1.5rem;
-    overflow: hidden; 
-    position: relative;
-    box-sizing: border-box;
 }
 
 .terminal-messages::-webkit-scrollbar {
@@ -50,14 +49,15 @@
 }
 
 .terminal-messages {
-    flex: 1; 
-    overflow-y: auto; 
+    flex: 1 1 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-    padding-right: 10px;
+    gap: 0.8rem;
     scrollbar-gutter: stable; 
+    min-height: 0; 
 }
 
 .message.user {
@@ -65,23 +65,24 @@
 }
 
 .terminal-input-form {
+    height: 60px; 
     flex-shrink: 0;
     display: flex;
     align-items: center;
-    background: transparent;
+    padding: 0 1.5rem;
+    border-top: 1px solid rgba(22, 255, 0, 0.2);
+    background-color: #050505;
+    z-index: 5;
 }
 
 .terminal-input-form input {
+    flex: 1;
     background: transparent;
     border: none;
-    color: #16ff00; 
-    font-family: 'VT323', monospace;
+    color: #16ff00;
+    font-family: inherit;
     font-size: inherit;
-    width: 100%;
     outline: none;
-    caret-shape: block; 
-    caret-color: #16ff00;
-    z-index: 2;
     text-shadow: 0 0 5px rgba(22, 255, 0, 0.6);
 }
 
