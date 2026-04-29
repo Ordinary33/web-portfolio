@@ -28,10 +28,10 @@ export default function Status() {
     <div className="flex h-full flex-col">
       
       <div className="mb-4 lg:mb-8 flex flex-wrap justify-center lg:justify-end gap-4 lg:gap-8 border-b border-pip-green/30 pb-2 text-sm md:text-xl drop-shadow-text-glow">
-        <span>Wg 34/125</span>
-        <span>HP 89/110</span>
-        <span>DR 11</span>
-        <span>Caps 1721</span>
+        <span>Wg 86/110</span>
+        <span>HP 89/137</span>
+        <span>DR 67</span>
+        <span>Caps 312</span>
       </div>
 
       <div className="flex flex-col lg:flex-row flex-1 gap-6 lg:gap-10 lg:min-h-0">
